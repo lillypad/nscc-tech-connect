@@ -1,0 +1,316 @@
+% NSCC Tech Connect
+% Copyright (C) 2018  Lilly Chalupowski
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+\documentclass[aspectratio=169]{beamer}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+\makeatletter
+\newenvironment{myitemize}{%
+  \setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+  \renewcommand*{\@listi}{\leftmargin\leftmargini \parsep\z@ \topsep\z@ \itemsep\z@}
+  \let\@listI\@listi
+  \itemize
+}{\enditemize}
+\makeatother
+
+\graphicspath{{img/}}
+
+\usetheme{Warsaw}
+\usemintedstyle{monokai}
+
+\setbeamercolor{normal text}{fg=white,bg=black!90}
+\setbeamercolor{structure}{fg=white}
+\setbeamercolor{alerted text}{fg=red!85!black}
+\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+\setbeamercolor*{framesubtitle}{fg=white}
+\setbeamercolor*{block title}{parent=structure,bg=black!60}
+\setbeamercolor*{block body}{fg=black,bg=black!10}
+\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{footercolor}{fg=white,bg=black}
+
+\makeatletter
+\defbeamertemplate*{footline}{myfootline}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{footercolor}%
+      \insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{footercolor}%
+      \insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{footercolor}%
+      \insertshortdate{}\hspace*{2em}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\title{A Day in the Life - Cyber Security and Threat Intelligence}
+
+\institute{GoSecure}
+\author{Lilly Chalupowski}
+\date{January 24, 2019}
+
+\begin{document}
+
+\setbeamertemplate{footline}{}
+\begin{frame}[t]
+  \begin{center}
+    \begingroup
+    \fontsize{20pt}{20pt}\selectfont
+    \inserttitle \\
+    \endgroup
+    \bigskip
+    \includegraphics[scale=0.05]{title} \\
+    \bigskip
+    \insertauthor \\
+    \insertdate
+  \end{center}
+\end{frame}
+
+\setbeamertemplate{footline}[myfootline]
+
+\begin{frame}
+  \frametitle{whois lilly.chalupowski}
+  \begin{table}
+    \caption{\textit{who.is results}}
+    \begin{tabularx}{\textwidth}{|X|X|}
+      \hline
+      Name & Lilly Chalupowski \\
+      \hline
+      Status & Employed \\
+      \hline
+      Creation Date & 1986/11/29 \\
+      \hline
+      Expiry & A Long Time from Now \\
+      \hline
+      Registrant Name & GoSecure \\
+      \hline
+      Administrative contact & Travis Barlow \\
+      \hline
+      Job & Security Application Developer - Threat Intelligence \\
+      \hline
+    \end{tabularx}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Agenda}
+  \begin{itemize}
+    \item{Exploring}
+      \begin{itemize}
+        \item{Find your Passion}
+        \item{Opportunities}
+        \item{Try it Out}
+        \item{Story Time}
+      \end{itemize}
+    \item{Leaning}
+      \begin{itemize}
+      \item{Post Secondary}
+      \item{Online}
+      \item{In Person}
+      \item{Story Time}
+      \end{itemize}
+    \item{Showing Value}
+      \begin{itemize}
+        \item{Resume}
+        \item{Social Media}
+        \item{Story Time}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Agenda}
+  \begin{itemize}
+  \item{Day in the Life}
+    \begin{itemize}
+    \item{Morning}
+    \item{Afternoon}
+    \item{Evening}
+    \item{Travel}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Disclaimer}
+  \begin{tcolorbox}[title=disclaimer.log,colback=gray]
+    The life-hacks covered in this presentation can be dangerous and are\\
+    being shown for educational purposes.\\
+    \newline
+    It is a violation of Federal laws to use life-hacks to gain unauthorized access to information, assets or systems belonging to others, or to exceed authorization on systems for which you have not been granted.\\
+    \newline
+    Only use life-hacks with/on systems you own or have written permission from the owner. I (the speaker) do not assume any responsibility and shall not be held liable for any illegal use of these methods.\\
+  \end{tcolorbox}
+\end{frame}
+
+\setbeamertemplate{footline}{}
+
+\begin{frame}[t]
+  \begin{center}
+    \begingroup
+    \fontsize{20pt}{20pt}\selectfont
+    Exploring \\
+    \endgroup
+    \bigskip
+    \includegraphics[width=9cm,keepaspectratio]{exploring} \\
+    \bigskip
+    \inserttitle \\
+  \end{center}
+\end{frame}
+
+\setbeamertemplate{footline}[myfootline]
+
+\begin{frame}
+  \frametitle{Finding your Passion}
+  \framesubtitle{Exploring 0 - Finding your Passion}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{.30\textwidth}
+      \begin{figure}
+        \includegraphics[width=5.5cm,keepaspectratio]{compass}
+        \caption{Finding your Way}
+      \end{figure}
+    \end{column}
+    \hfill
+    \begin{column}{.60\textwidth}
+        \begin{tcolorbox}[title=finding\_your\_passion.log,colback=gray]
+          Don't be afraid to join different social groups and try different things.
+          If you don't like something don't waste your time and move on to the next thing on your list.
+        \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Finding your Passion}
+  \framesubtitle{Exploring 1 - Opportunity}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{.30\textwidth}
+      \begin{figure}
+        \includegraphics[width=4cm,keepaspectratio]{mike_rowe}
+        \caption{Mike Rowe}
+      \end{figure}
+    \end{column}
+    \hfill
+    \begin{column}{.60\textwidth}
+        \begin{tcolorbox}[title=mike\_rowe.log,colback=gray]
+          Take your passion with you, but don't follow it around. Instead, follow opportunity. - Mike Rowe
+        \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Try it Out}
+  \framesubtitle{Exploring 2 - Try it Out}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{.30\textwidth}
+      \begin{figure}
+        \includegraphics[width=5.5cm,keepaspectratio]{try_fail_success}
+        \caption{Road to Success}
+      \end{figure}
+    \end{column}
+    \hfill
+    \begin{column}{.60\textwidth}
+        \begin{tcolorbox}[title=success.log,colback=gray]
+          We are always going to fail when starting out but if you are passionate about it you will try again until you succeed.
+        \end{tcolorbox}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Story Time}
+  \framesubtitle{Exploring 3 - Story Time}
+  \begin{center}
+    \includegraphics[width=10cm,keepaspectratio]{story_time}
+  \end{center}
+\end{frame}
+
+\setbeamertemplate{footline}{}
+
+\begin{frame}[t]
+  \begin{center}
+    \begingroup
+    \fontsize{20pt}{20pt}\selectfont
+    Learning \\
+    \endgroup
+    \bigskip
+    \includegraphics[width=9cm,keepaspectratio]{learning} \\
+    \bigskip
+    \inserttitle \\
+  \end{center}
+\end{frame}
+
+\setbeamertemplate{footline}[myfootline]
+
+\begin{frame}
+  \frametitle{Summary}
+  \begin{itemize}
+  \item{Make Mistakes}
+  \item{Learn}
+  \item{Show your Value}
+  \item{Actions Speak Louder than Words}
+  \item{Cyber Security}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Can I Has Your Slides and Codes Plz?}
+  \begin{center}
+    \begin{figure}
+      \includegraphics[width=7cm,keepaspectratio]{git_meme}
+      \caption{\href{https://github.com/lillypad/swamp-rat}{https://github.com/lillypad/swamp-rat}}
+    \end{figure}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{References}
+  \begin{center}
+    \begin{itemize}
+    \item{\href{https://en.wikipedia.org/wiki/Main_Page}{Wikipedia}}
+    \item{\href{https://ti.360.net/blog/articles/analysis-of-apt-c-27/}{NJRat Article}}
+    \item{\href{https://www.virustotal.com/\#/file/0a9c88d03260b92608c9c079a1b449cf46e5cd764f12f2ec852038dd6bd0fa97/detection}{NJRat Sample}}
+    \item{\href{https://www.virustotal.com/\#/file/4e51a6779a7776055ebdeffe28d00e8866b2e722e3ccb6cba868cf8cdc86b1a3/detection}{NJRat Unpacked Sample}}
+    \item{\href{http://sfkino.tistory.com/70}{Alibaba Malware Article}}
+    \item{\href{https://www.virustotal.com/\#/file/d057088d0de3d920ea0939217c756274018b6e89cbfc74f66f50a9d27a384b09/detection}{Alibaba Malware Sample}}
+    \item{\href{https://www.welivesecurity.com/2018/09/05/powerpool-malware-exploits-zero-day-vulnerability/}{PowerPool Malware Article}}
+    \item{\href{https://www.virustotal.com/\#/file/58a50840c04cd15f439f1cc1b684e9f9fa22c0d64f44a391d9e2b1222e5cd6bd/details}{PowerPool Malware Sample}}
+    \item{\href{https://www.virustotal.com/\#/file/9c08136b26ee5234c61a5d9e5a17afb15da35efc66514d2df5b53178693644c5/detection}{PowerPool Malware Sample Patched Version}}
+    \item{\href{https://www.symantec.com/security-center/writeup/2018-092116-1134-99?om_rssid=sr-latestthreats30days\#technicaldescription}{FancyBear APT Article}}
+    \item{\href{https://www.virustotal.com/\#/file/a37eda810ca92486bfb0e1f1b27adb7c9df57aafab686c000ae1d6ec5d6f6180/detection}{FancyBear APT Sample}}
+    \item{\href{https://www.virustotal.com/\#/file/90e7c99effc7e4360c45a2af7ca9cc23313902a40c30d48cac8db048e9e4c0f6/detection}{FancyBear APT Unpacked .NET Assembly}}
+    \end{itemize}
+  \end{center}
+\end{frame}
+
+\end{document}
