@@ -2,6 +2,13 @@
 
 This repository contains the `.tex` file as well as the rendered presentation pdf in the `docs/` folder.
 
+# Compiling the Presentation
+
+Make sure you have `pdflatex` installed then do the following:
+```bash
+make
+```
+
 # Presentation Agenda
 - Exploring
   - Find your Passion
